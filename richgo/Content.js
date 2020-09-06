@@ -13,10 +13,22 @@ export default function Content() {
   return (
     <View style={{ marginBottom: 10 }}>
       <View style={{ marginBottom: 10 }}>
-        <Text>똑똑하게 아파트 찾기</Text>
+        <Text
+          style={{
+            margin: 5,
+            color: '#333D4B',
+            fontSize: 16,
+            fontWeight: 'bold'
+          }}
+        >
+          똑똑하게 아파트 찾기
+        </Text>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity
-            style={[styles.button, { height: 130, width: 170 }]}
+            style={[
+              styles.button,
+              { height: 130, width: 170, backgroundColor: '#72B7A1' }
+            ]}
           >
             <Image
               source={require('./assets/icon-finding-great-apt.png')}
@@ -26,7 +38,10 @@ export default function Content() {
           </TouchableOpacity>
           <View style={{ flexDirection: 'column' }}>
             <TouchableOpacity
-              style={[styles.button, { height: 60, width: 170 }]}
+              style={[
+                styles.button,
+                { height: 60, width: 170, backgroundColor: '#FE9E9E' }
+              ]}
             >
               <View style={{ flexDirection: 'row' }}>
                 <Image
@@ -40,7 +55,10 @@ export default function Content() {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.button, { height: 60, width: 170 }]}
+              style={[
+                styles.button,
+                { height: 60, width: 170, backgroundColor: '#3CCDE2' }
+              ]}
             >
               <View style={{ flexDirection: 'row' }}>
                 <Image
@@ -57,9 +75,23 @@ export default function Content() {
         </View>
       </View>
       <View style={{ marginBottom: 10 }}>
-        <Text>특별한 기능</Text>
+        <Text
+          style={{
+            margin: 5,
+            color: '#333D4B',
+            fontSize: 16,
+            fontWeight: 'bold'
+          }}
+        >
+          특별한 기능
+        </Text>
         <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity style={[styles.button, { height: 60, width: 170 }]}>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              { height: 60, width: 170, backgroundColor: '#3898FF' }
+            ]}
+          >
             <View style={{ flexDirection: 'row' }}>
               <Image
                 source={require('./assets/icon-ranking-of-apt.png')}
@@ -71,7 +103,12 @@ export default function Content() {
               <Text style={styles.buttonText}>아파트 랭킹</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { height: 60, width: 170 }]}>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              { height: 60, width: 170, backgroundColor: '#3D97BB' }
+            ]}
+          >
             <View style={{ flexDirection: 'row' }}>
               <Image
                 source={require('./assets/icon-calculation-holding-tax.png')}
@@ -91,14 +128,19 @@ export default function Content() {
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 10,
+    borderRadius: 8,
     padding: 15,
     margin: 5,
-    backgroundColor: 'gray',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    shadowRadius: 16,
+    shadowColor: '#455B63',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08
   },
   buttonText: {
     color: 'white',
+    fontSize: 17,
+    fontWeight: 'bold',
     alignSelf: 'center'
   }
 });

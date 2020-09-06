@@ -7,8 +7,7 @@ export default function Header() {
       <Image
         source={require('./assets/status-bar.png')}
         style={{
-          paddingLeft: 170,
-          paddingRight: 170,
+          paddingHorizontal: 170,
           padding: 8,
           margin: 10,
           resizeMode: 'contain'
@@ -20,14 +19,14 @@ export default function Header() {
           flexDirection: 'row',
           justifyContent: 'center',
           width: '100%',
-          margin: 5
+          marginBottom: 5,
+          marginTop: 10
         }}
       >
         <Image
           source={require('./assets/logo.png')}
           style={{
-            paddingLeft: 69,
-            paddingRight: 69,
+            paddingHorizontal: 69,
             padding: 16,
             resizeMode: 'contain',
             flex: 1
@@ -50,19 +49,22 @@ export default function Header() {
         style={{
           flex: 1,
           flexDirection: 'row',
-          borderRadius: 10,
-          width: 350,
-          borderColor: 'lightgray',
+          borderRadius: 8,
+          width: 343,
+          borderColor: '#78849E66',
           borderWidth: 1,
-          padding: 7,
-          margin: 10
+          padding: 8,
+          margin: 10,
+          shadowRadius: 16,
+          shadowColor: '#455B63',
+          shadowOffset: { width: 0, height: 12 },
+          shadowOpacity: 0.08
         }}
       >
         <Image
           source={require('./assets/icon-search.png')}
           style={{
-            marginLeft: 3,
-            marginRight: 3,
+            marginHorizontal: 3,
             padding: 18,
             resizeMode: 'contain'
           }}
@@ -70,17 +72,13 @@ export default function Header() {
         <Image
           source={require('./assets/search-divider.png')}
           style={{
-            paddingTop: 12,
-            paddingBottom: 12,
+            paddingVertical: 12,
             padding: 0.5,
             resizeMode: 'contain',
             marginRight: 10
           }}
         />
-        <TextInput
-          style={{}}
-          placeholder='미래가격 볼 아파트명 입력'
-        ></TextInput>
+        <TextInput placeholder='미래가격 볼 아파트명 입력'></TextInput>
       </View>
     </View>
   );

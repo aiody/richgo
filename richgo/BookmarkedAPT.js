@@ -12,11 +12,18 @@ import ElementOfAPT from './ElementOfAPT';
 
 export default function BookmarkedAPT() {
   return (
-    <View style={[styles.container, { backgroundColor: 'lightgray' }]}>
+    <View
+      style={[styles.container, { backgroundColor: '#F7F7FA', paddingTop: 25 }]}
+    >
       <View
         style={[
           styles.container,
-          { flexDirection: 'row', justifyContent: 'space-between', padding: 15 }
+          {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            padding: 15,
+            alignItems: 'center'
+          }
         ]}
       >
         <View style={[styles.container, { flexDirection: 'row' }]}>
@@ -27,9 +34,20 @@ export default function BookmarkedAPT() {
               resizeMode: 'contain'
             }}
           />
-          <Text>관심 아파트</Text>
+          <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#333D48' }}>
+            관심 아파트
+          </Text>
         </View>
-        <Text>총 11개</Text>
+        <Text
+          style={{
+            color: 'gray',
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: '#78849E'
+          }}
+        >
+          총 11개
+        </Text>
       </View>
 
       <View style={{ flexDirection: 'row' }}>
@@ -42,7 +60,11 @@ export default function BookmarkedAPT() {
               width: '100%'
             }}
           >
-            <Text style={styles.buttonText}>최근 추가된 순서</Text>
+            <Text
+              style={{ alignSelf: 'center', fontSize: 16, color: '#2A2E43' }}
+            >
+              최근 추가된 순서
+            </Text>
             <Image
               source={require('./assets/icon-open-arrow.png')}
               style={{
@@ -56,21 +78,25 @@ export default function BookmarkedAPT() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.button, { height: 40, width: 80 }]}>
+        <TouchableOpacity style={[styles.button, { height: 40, width: 90 }]}>
           <View style={{ flexDirection: 'row' }}>
             <Image
               source={require('./assets/icon-settings.png')}
               style={{
+                marginLeft: 4,
                 marginRight: 3,
                 padding: 12,
                 resizeMode: 'contain'
               }}
             />
-            <Text style={styles.buttonText}>설정</Text>
+            <Text style={{ fontSize: 16, color: '#333D48' }}>설정</Text>
           </View>
         </TouchableOpacity>
       </View>
       <ScrollView showsHorizontalScrollIndicator={false}>
+        <ElementOfAPT></ElementOfAPT>
+        <ElementOfAPT></ElementOfAPT>
+        <ElementOfAPT></ElementOfAPT>
         <ElementOfAPT></ElementOfAPT>
       </ScrollView>
     </View>
@@ -84,15 +110,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   button: {
-    borderRadius: 10,
+    borderRadius: 8,
     padding: 10,
-    margin: 5,
+    margin: 3,
     backgroundColor: 'white',
-    borderColor: 'gray',
+    borderColor: '#78849E66',
     borderWidth: 1,
-    justifyContent: 'center'
-  },
-  buttonText: {
-    alignSelf: 'center'
+    justifyContent: 'center',
+    shadowRadius: 16,
+    shadowColor: '#455B63',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08
   }
 });
