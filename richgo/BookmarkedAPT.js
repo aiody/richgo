@@ -7,22 +7,40 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import { Button } from 'native-base';
 import ElementOfAPT from './ElementOfAPT';
+import AllDeleteBoxWithArrow from './AllDeleteBoxWithArrow';
+import AllDeleteModal from './AllDeleteModal';
+import SelectSorting from './SelectSorting';
 
 class BookmarkedAPT extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      onSettings: false
+      isOnSettings: false,
+      isAllDeleteModalVisible: false,
+      isSortingOrderModalVisible: false
     };
   }
 
+  setAllDeleteModalVisible = (visible) => {
+    this.setState({ isAllDeleteModalVisible: visible });
+  };
+
+  setSortingOrderModalVisible = (visible) => {
+    this.setState({ isSortingOrderModalVisible: visible });
+  };
+
   onPressSettings = () => {
-    console.log('on press settings');
+    let newIsOnSettings = this.state.isOnSettings ^ true;
+    this.setState({ isOnSettings: newIsOnSettings });
   };
 
   render() {
+    const {
+      isOnSettings,
+      isAllDeleteModalVisible,
+      isSortingOrderModalVisible
+    } = this.state;
     return (
       <View
         style={[
@@ -57,7 +75,6 @@ class BookmarkedAPT extends React.Component {
           </View>
           <Text
             style={{
-              color: 'gray',
               fontSize: 18,
               fontWeight: 'bold',
               color: '#78849E'
@@ -68,7 +85,12 @@ class BookmarkedAPT extends React.Component {
         </View>
 
         <View style={{ flexDirection: 'row', paddingBottom: 8 }}>
-          <TouchableOpacity style={[styles.button, { height: 40, width: 250 }]}>
+          <TouchableOpacity
+            style={[styles.button, { height: 40, width: 250 }]}
+            onPress={() => {
+              this.setSortingOrderModalVisible(true);
+            }}
+          >
             <View
               style={{
                 flex: 1,
@@ -119,38 +141,23 @@ class BookmarkedAPT extends React.Component {
           <ElementOfAPT></ElementOfAPT>
           <ElementOfAPT></ElementOfAPT>
         </ScrollView>
-        <TouchableOpacity
-          style={[
-            styles.button,
-            {
-              position: 'absolute',
-              width: 135,
-              height: 70,
-              backgroundColor: '#353A50',
-              top: 145,
-              right: 10,
-              borderColor: '#303640',
-              borderWidth: 1
-            }
-          ]}
-          onPress={this.onPressSettings}
-        >
-          <View style={styles.triangle} />
-          <View style={[styles.container, { flexDirection: 'row' }]}>
-            <View
-              style={{ positon: 'relative', backgroundColor: '#88b7d5' }}
-            ></View>
-            <Image
-              source={require('./assets/icon-delete.png')}
-              style={{
-                padding: 12,
-                marginRight: 3,
-                resizeMode: 'contain'
-              }}
-            />
-            <Text style={{ fontSize: 16, color: '#fff' }}>전체 삭제</Text>
-          </View>
-        </TouchableOpacity>
+
+        {isOnSettings ? (
+          <AllDeleteBoxWithArrow
+            onPressSettings={this.onPressSettings}
+            setModalVisable={this.setAllDeleteModalVisible}
+          ></AllDeleteBoxWithArrow>
+        ) : (
+          <></>
+        )}
+        <AllDeleteModal
+          isVisible={isAllDeleteModalVisible}
+          setModalVisible={this.setAllDeleteModalVisible}
+        />
+        <SelectSorting
+          isVisible={isSortingOrderModalVisible}
+          setModalVisible={this.setSortingOrderModalVisible}
+        />
       </View>
     );
   }
@@ -174,19 +181,6 @@ const styles = StyleSheet.create({
     shadowColor: '#455B63',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08
-  },
-  triangle: {
-    width: 10,
-    height: 10,
-    position: 'absolute',
-    top: -10,
-    right: 30,
-    borderLeftWidth: 10,
-    borderLeftColor: 'transparent',
-    borderRightWidth: 10,
-    borderRightColor: 'transparent',
-    borderBottomWidth: 10,
-    borderBottomColor: '#303640'
   }
 });
 

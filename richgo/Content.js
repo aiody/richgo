@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Image
-} from 'react-native';
-import { Button } from 'native-base';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 export default function Content() {
   return (
