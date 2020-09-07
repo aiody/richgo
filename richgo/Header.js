@@ -13,16 +13,8 @@ export default function Header() {
           resizeMode: 'contain'
         }}
       />
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'center',
-          width: '100%',
-          marginBottom: 5,
-          marginTop: 10
-        }}
-      >
+
+      <View style={styles.titleAndMyInfoView}>
         <Image
           source={require('./assets/logo.png')}
           style={{
@@ -32,7 +24,6 @@ export default function Header() {
             flex: 1
           }}
         />
-
         <Image
           source={require('./assets/icon-my-info.png')}
           style={{
@@ -45,22 +36,8 @@ export default function Header() {
           }}
         />
       </View>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          borderRadius: 8,
-          width: 343,
-          borderColor: '#78849E66',
-          borderWidth: 1,
-          padding: 8,
-          margin: 10,
-          shadowRadius: 16,
-          shadowColor: '#455B63',
-          shadowOffset: { width: 0, height: 12 },
-          shadowOpacity: 0.08
-        }}
-      >
+
+      <View style={styles.textInput}>
         <Image
           source={require('./assets/icon-search.png')}
           style={{
@@ -100,5 +77,27 @@ const styles = StyleSheet.create({
     paddingLeft: 70,
     padding: 15,
     margin: 10
+  },
+  titleAndMyInfoView: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
+    marginBottom: 5,
+    marginTop: 10
+  },
+  textInput: {
+    flex: 1,
+    flexDirection: 'row',
+    borderRadius: 8,
+    width: 343,
+    borderColor: '#78849E66',
+    borderWidth: 1,
+    padding: 8,
+    margin: 10,
+    shadowRadius: 16,
+    shadowColor: '#455B63',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.08
   }
 });

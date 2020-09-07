@@ -1,0 +1,32 @@
+[
+  {
+    "name": "반포 자이",
+    "address": "서울시 강남구 서초",
+    "modelYear": 23,
+    "numOfHouseholds": 9934,
+    "area": 34,
+    "price": 14.92,
+    "residenceScore": 82,
+    "investmentScore": 73
+  },
+  {
+    "name": "래미안 퍼스티지",
+    "address": "서울시 강남구 서초",
+    "modelYear": 23,
+    "numOfHouseholds": 9934,
+    "area": 34,
+    "price": 14.92,
+    "residenceScore": 52,
+    "investmentScore": 99
+  },
+  {
+    "name": "서초 현대 아파트 3차",
+    "address": "서울시 강남구 서초",
+    "modelYear": 23,
+    "numOfHouseholds": 9934,
+    "area": 34,
+    "price": 14.92,
+    "residenceScore": 96,
+    "investmentScore": 75
+  }
+]

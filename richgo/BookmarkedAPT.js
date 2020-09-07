@@ -10,7 +10,8 @@ import {
 import ElementOfAPT from './ElementOfAPT';
 import AllDeleteBoxWithArrow from './AllDeleteBoxWithArrow';
 import AllDeleteModal from './AllDeleteModal';
-import SelectSorting from './SelectSorting';
+import SelectSortingModal from './SelectSortingModal';
+import fakeData from './fakeData.json';
 
 class BookmarkedAPT extends React.Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class BookmarkedAPT extends React.Component {
     this.state = {
       isOnSettings: false,
       isAllDeleteModalVisible: false,
-      isSortingOrderModalVisible: false
+      isSortingOrderModalVisible: false,
+      bookmarks: fakeData,
+      curSorting: '최근 추가된 순서'
     };
   }
 
@@ -28,6 +31,30 @@ class BookmarkedAPT extends React.Component {
 
   setSortingOrderModalVisible = (visible) => {
     this.setState({ isSortingOrderModalVisible: visible });
+  };
+
+  setCurrentSortingName = (name) => {
+    this.setState({ curSorting: name });
+  };
+
+  deleteAllBookmarks = () => {
+    this.setState({ bookmarks: [] });
+  };
+
+  sortBookmarksByLatest = () => {
+    this.setState({ bookmarks: fakeData });
+  };
+
+  sortBookmarksByResidenceScore = () => {
+    const sorted = this.state.bookmarks.slice();
+    sorted.sort((a, b) => b.residenceScore - a.residenceScore);
+    this.setState({ bookmarks: sorted });
+  };
+
+  sortBookmarksByInvestmentScore = () => {
+    const sorted = this.state.bookmarks.slice();
+    sorted.sort((a, b) => b.investmentScore - a.investmentScore);
+    this.setState({ bookmarks: sorted });
   };
 
   onPressSettings = () => {
@@ -80,7 +107,7 @@ class BookmarkedAPT extends React.Component {
               color: '#78849E'
             }}
           >
-            총 11개
+            총 {this.state.bookmarks.length}개
           </Text>
         </View>
 
@@ -102,7 +129,7 @@ class BookmarkedAPT extends React.Component {
               <Text
                 style={{ alignSelf: 'center', fontSize: 16, color: '#2A2E43' }}
               >
-                최근 추가된 순서
+                {this.state.curSorting}
               </Text>
               <Image
                 source={require('./assets/icon-open-arrow.png')}
@@ -135,11 +162,11 @@ class BookmarkedAPT extends React.Component {
             </View>
           </TouchableOpacity>
         </View>
+
         <ScrollView showsHorizontalScrollIndicator={false}>
-          <ElementOfAPT></ElementOfAPT>
-          <ElementOfAPT></ElementOfAPT>
-          <ElementOfAPT></ElementOfAPT>
-          <ElementOfAPT></ElementOfAPT>
+          {this.state.bookmarks.map((el, index) => (
+            <ElementOfAPT key={index} info={el}></ElementOfAPT>
+          ))}
         </ScrollView>
 
         {isOnSettings ? (
@@ -150,13 +177,20 @@ class BookmarkedAPT extends React.Component {
         ) : (
           <></>
         )}
+
         <AllDeleteModal
           isVisible={isAllDeleteModalVisible}
           setModalVisible={this.setAllDeleteModalVisible}
+          deleteAllBookmarks={this.deleteAllBookmarks}
         />
-        <SelectSorting
+
+        <SelectSortingModal
           isVisible={isSortingOrderModalVisible}
           setModalVisible={this.setSortingOrderModalVisible}
+          setCurrentSortingName={this.setCurrentSortingName}
+          sortBookmarksByLatest={this.sortBookmarksByLatest}
+          sortBookmarksByResidenceScore={this.sortBookmarksByResidenceScore}
+          sortBookmarksByInvestmentScore={this.sortBookmarksByInvestmentScore}
         />
       </View>
     );

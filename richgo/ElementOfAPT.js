@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function ElementOfAPT() {
+export default function ElementOfAPT(props) {
   return (
     <View style={styles.item}>
       <View style={{ flexDirection: 'column', alignSelf: 'stretch' }}>
@@ -23,7 +23,7 @@ export default function ElementOfAPT() {
               style={{
                 padding: 58,
                 borderRadius: 12,
-                resizeMode: 'strech'
+                resizeMode: 'stretch'
               }}
             />
             <Image
@@ -36,6 +36,7 @@ export default function ElementOfAPT() {
               }}
             />
           </View>
+
           <View
             style={{
               flexDirection: 'column',
@@ -54,27 +55,13 @@ export default function ElementOfAPT() {
                 right: 0
               }}
             />
-            <Text
-              style={{
-                fontSize: 18,
-                marginBottom: 8,
-                color: '#333D48',
-                fontWeight: 'bold'
-              }}
-            >
-              반포 자이
+
+            <Text style={styles.nameText}>{props.info.name}</Text>
+            <Text style={styles.addressText}>{props.info.address}</Text>
+            <Text style={styles.addressText}>
+              {props.info.modelYear}년차·{props.info.numOfHouseholds}세대
             </Text>
-            <Text style={{ fontSize: 14, color: '#78849E' }}>
-              서울시 강남구 서초
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                color: '#78849E'
-              }}
-            >
-              23년차·9934세대
-            </Text>
+
             <View
               style={{
                 flexDirection: 'row',
@@ -86,7 +73,7 @@ export default function ElementOfAPT() {
               <Text
                 style={{ fontSize: 16, fontWeight: 'bold', color: '#333D48' }}
               >
-                34평 / 매매
+                {props.info.area}평 / 매매
               </Text>
               <Text
                 style={{ fontSize: 14, fontWeight: 'normal', color: '#333D48' }}
@@ -96,11 +83,12 @@ export default function ElementOfAPT() {
               <Text
                 style={{ fontSize: 16, fontWeight: 'bold', color: '#333D48' }}
               >
-                14.92천
+                {props.info.price}천
               </Text>
             </View>
           </View>
         </View>
+
         <View style={{ flexDirection: 'row', padding: 15 }}>
           <View style={{ flex: 0.4 }}>
             <Image
@@ -112,6 +100,7 @@ export default function ElementOfAPT() {
               }}
             />
           </View>
+
           <View style={{ flexDirection: 'column', marginLeft: 10, flex: 0.6 }}>
             <View
               style={{
@@ -120,13 +109,9 @@ export default function ElementOfAPT() {
                 marginTop: 5
               }}
             >
-              <Text style={{ fontSize: 14, marginRight: 20, color: '#5872FF' }}>
-                거주 점수
-              </Text>
-              <Text
-                style={{ fontSize: 18, color: '#5872FF', fontWeight: 'bold' }}
-              >
-                82점
+              <Text style={styles.scoreLabelText}>거주 점수</Text>
+              <Text style={styles.scoreText}>
+                {props.info.residenceScore}점
               </Text>
             </View>
             <View
@@ -135,13 +120,9 @@ export default function ElementOfAPT() {
                 alignItems: 'baseline'
               }}
             >
-              <Text style={{ fontSize: 14, marginRight: 20, color: '#5872FF' }}>
-                투자 점수
-              </Text>
-              <Text
-                style={{ fontSize: 18, color: '#5872FF', fontWeight: 'bold' }}
-              >
-                73점
+              <Text style={styles.scoreLabelText}>투자 점수</Text>
+              <Text style={styles.scoreText}>
+                {props.info.investmentScore}점
               </Text>
             </View>
           </View>
@@ -164,5 +145,25 @@ const styles = StyleSheet.create({
     shadowColor: '#455B63',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08
+  },
+  nameText: {
+    fontSize: 18,
+    marginBottom: 8,
+    color: '#333D48',
+    fontWeight: 'bold'
+  },
+  addressText: {
+    fontSize: 14,
+    color: '#78849E'
+  },
+  scoreText: {
+    fontSize: 18,
+    color: '#5872FF',
+    fontWeight: 'bold'
+  },
+  scoreLabelText: {
+    fontSize: 14,
+    marginRight: 20,
+    color: '#5872FF'
   }
 });

@@ -3,18 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 export default function Content() {
   return (
-    <View style={{ marginBottom: 10 }}>
-      <View style={{ marginBottom: 10 }}>
-        <Text
-          style={{
-            margin: 5,
-            color: '#333D4B',
-            fontSize: 16,
-            fontWeight: 'bold'
-          }}
-        >
-          똑똑하게 아파트 찾기
-        </Text>
+    <View style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.titleText}>똑똑하게 아파트 찾기</Text>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity
             style={[
@@ -66,17 +57,8 @@ export default function Content() {
           </View>
         </View>
       </View>
-      <View style={{ marginBottom: 10 }}>
-        <Text
-          style={{
-            margin: 5,
-            color: '#333D4B',
-            fontSize: 16,
-            fontWeight: 'bold'
-          }}
-        >
-          특별한 기능
-        </Text>
+      <View style={styles.container}>
+        <Text style={styles.titleText}>특별한 기능</Text>
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity
             style={[
@@ -119,6 +101,9 @@ export default function Content() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 10
+  },
   button: {
     borderRadius: 8,
     padding: 15,
@@ -134,5 +119,11 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: 'bold',
     alignSelf: 'center'
+  },
+  titleText: {
+    margin: 5,
+    color: '#333D4B',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 });

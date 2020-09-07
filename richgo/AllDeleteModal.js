@@ -14,6 +14,7 @@ export default function AllDeleteModal(props) {
           <Text style={styles.modalText}>
             관심 아파트 리스트가 전체 삭제 됩니다.
           </Text>
+
           <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
               style={[styles.button, styles.cancelButton]}
@@ -21,33 +22,16 @@ export default function AllDeleteModal(props) {
                 props.setModalVisible(!props.isVisible);
               }}
             >
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: '#fff',
-                  fontWeight: 'bold',
-                  textAlign: 'center'
-                }}
-              >
-                취소
-              </Text>
+              <Text style={styles.buttonText}>취소</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[styles.button, styles.OKButton]}
               onPress={() => {
                 props.setModalVisible(!props.isVisible);
+                props.deleteAllBookmarks();
               }}
             >
-              <Text
-                style={{
-                  fontSize: 16,
-                  color: '#fff',
-                  fontWeight: 'bold',
-                  textAlign: 'center'
-                }}
-              >
-                확인
-              </Text>
+              <Text style={styles.buttonText}>확인</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -97,6 +81,9 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   buttonText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: 'bold',
     textAlign: 'center'
   }
 });

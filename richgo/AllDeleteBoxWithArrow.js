@@ -5,23 +5,7 @@ export default function Content(props) {
   return (
     <>
       <TouchableOpacity
-        style={[
-          styles.button,
-          {
-            position: 'absolute',
-            width: 135,
-            height: 67,
-            backgroundColor: '#353A50',
-            top: 145,
-            right: 10,
-            borderColor: '#303640',
-            borderWidth: 1,
-            shadowRadius: 16,
-            shadowColor: '#000000',
-            shadowOffset: { width: 0, height: 12 },
-            shadowOpacity: 0.16
-          }
-        ]}
+        style={styles.button}
         onPress={() => {
           props.onPressSettings();
           props.setModalVisable(true);
@@ -58,14 +42,19 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 10,
     margin: 3,
-    backgroundColor: 'white',
-    borderColor: '#78849E66',
-    borderWidth: 1,
     justifyContent: 'center',
+    position: 'absolute',
+    width: 135,
+    height: 67,
+    backgroundColor: '#353A50',
+    top: 145,
+    right: 10,
+    borderColor: '#303640',
+    borderWidth: 1,
     shadowRadius: 16,
-    shadowColor: '#455B63',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.08
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.16
   },
   triangle: {
     width: 10,
