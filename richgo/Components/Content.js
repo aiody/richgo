@@ -14,7 +14,7 @@ export default function Content() {
             ]}
           >
             <Image
-              source={require('./assets/icon-finding-great-apt.png')}
+              source={require('../assets/icon-finding-great-apt.png')}
               style={{ padding: 36, resizeMode: 'contain' }}
             />
             <Text style={styles.buttonText}>좋은 아파트 찾기</Text>
@@ -28,7 +28,7 @@ export default function Content() {
             >
               <View style={{ flexDirection: 'row' }}>
                 <Image
-                  source={require('./assets/icon-great-location-for-school.png')}
+                  source={require('../assets/icon-great-location-for-school.png')}
                   style={{
                     padding: 23,
                     resizeMode: 'contain'
@@ -45,7 +45,7 @@ export default function Content() {
             >
               <View style={{ flexDirection: 'row' }}>
                 <Image
-                  source={require('./assets/icon-find-with-map.png')}
+                  source={require('../assets/icon-find-with-map.png')}
                   style={{
                     padding: 23,
                     resizeMode: 'contain'
@@ -68,7 +68,7 @@ export default function Content() {
           >
             <View style={{ flexDirection: 'row' }}>
               <Image
-                source={require('./assets/icon-ranking-of-apt.png')}
+                source={require('../assets/icon-ranking-of-apt.png')}
                 style={{
                   padding: 23,
                   resizeMode: 'contain'
@@ -85,7 +85,7 @@ export default function Content() {
           >
             <View style={{ flexDirection: 'row' }}>
               <Image
-                source={require('./assets/icon-calculation-holding-tax.png')}
+                source={require('../assets/icon-calculation-holding-tax.png')}
                 style={{
                   padding: 23,
                   resizeMode: 'contain'

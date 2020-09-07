@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('./assets/status-bar.png')}
+        source={require('../assets/status-bar.png')}
         style={{
           paddingHorizontal: 170,
           padding: 8,
@@ -16,7 +16,7 @@ export default function Header() {
 
       <View style={styles.titleAndMyInfoView}>
         <Image
-          source={require('./assets/logo.png')}
+          source={require('../assets/logo.png')}
           style={{
             paddingHorizontal: 69,
             padding: 16,
@@ -25,7 +25,7 @@ export default function Header() {
           }}
         />
         <Image
-          source={require('./assets/icon-my-info.png')}
+          source={require('../assets/icon-my-info.png')}
           style={{
             marginRight: 5,
             padding: 18,
@@ -39,7 +39,7 @@ export default function Header() {
 
       <View style={styles.textInput}>
         <Image
-          source={require('./assets/icon-search.png')}
+          source={require('../assets/icon-search.png')}
           style={{
             marginHorizontal: 3,
             padding: 18,
@@ -47,7 +47,7 @@ export default function Header() {
           }}
         />
         <Image
-          source={require('./assets/search-divider.png')}
+          source={require('../assets/search-divider.png')}
           style={{
             paddingVertical: 12,
             padding: 0.5,

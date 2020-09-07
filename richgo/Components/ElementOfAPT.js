@@ -19,7 +19,7 @@ export default function ElementOfAPT(props) {
             }}
           >
             <Image
-              source={require('./assets/img-element-apt.png')}
+              source={require('../assets/img-element-apt.png')}
               style={{
                 padding: 58,
                 borderRadius: 12,
@@ -27,7 +27,7 @@ export default function ElementOfAPT(props) {
               }}
             />
             <Image
-              source={require('./assets/icon-star.png')}
+              source={require('../assets/icon-star.png')}
               style={{
                 paddingHorizontal: 14,
                 padding: 14,
@@ -46,7 +46,7 @@ export default function ElementOfAPT(props) {
             }}
           >
             <Image
-              source={require('./assets/more-vertical-alt.png')}
+              source={require('../assets/more-vertical-alt.png')}
               style={{
                 paddingVertical: 8,
                 padding: 2,
@@ -92,7 +92,7 @@ export default function ElementOfAPT(props) {
         <View style={{ flexDirection: 'row', padding: 15 }}>
           <View style={{ flex: 0.4 }}>
             <Image
-              source={require('./assets/img-graph.png')}
+              source={require('../assets/img-graph.png')}
               style={{
                 paddingHorizontal: 56,
                 padding: 32,

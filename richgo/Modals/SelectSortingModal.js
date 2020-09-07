@@ -41,7 +41,7 @@ class SelectSortingModal extends React.Component {
             }}
           >
             <Image
-              source={require('./assets/icon-close-modal.png')}
+              source={require('../assets/icon-close-modal.png')}
               style={{
                 padding: 12,
                 resizeMode: 'contain'
@@ -89,7 +89,7 @@ class SelectSortingModal extends React.Component {
           >
             <View style={[styles.divider, { flexDirection: 'row' }]}>
               <Image
-                source={require('./assets/icon-order-by-residence-score.png')}
+                source={require('../assets/icon-order-by-residence-score.png')}
                 style={{
                   padding: 12,
                   resizeMode: 'contain',
@@ -122,7 +122,7 @@ class SelectSortingModal extends React.Component {
           >
             <View style={[styles.divider, { flexDirection: 'row' }]}>
               <Image
-                source={require('./assets/icon-order-by-investment-score.png')}
+                source={require('../assets/icon-order-by-investment-score.png')}
                 style={{
                   padding: 12,
                   resizeMode: 'contain',

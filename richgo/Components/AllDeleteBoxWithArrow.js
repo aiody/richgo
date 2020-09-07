@@ -18,7 +18,7 @@ export default function Content(props) {
             style={{ position: 'relative', backgroundColor: '#88b7d5' }}
           ></View>
           <Image
-            source={require('./assets/icon-delete.png')}
+            source={require('../assets/icon-delete.png')}
             style={{
               padding: 12,
               marginRight: 3,

@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 import ElementOfAPT from './ElementOfAPT';
 import AllDeleteBoxWithArrow from './AllDeleteBoxWithArrow';
-import AllDeleteModal from './AllDeleteModal';
-import SelectSortingModal from './SelectSortingModal';
-import fakeData from './fakeData.json';
+import AllDeleteModal from '../Modals/AllDeleteModal';
+import SelectSortingModal from '../Modals/SelectSortingModal';
+import fakeData from '../Data/fakeData.json';
 
 class BookmarkedAPT extends React.Component {
   constructor(props) {
@@ -88,7 +88,7 @@ class BookmarkedAPT extends React.Component {
         >
           <View style={[styles.container, { flexDirection: 'row' }]}>
             <Image
-              source={require('./assets/icon-star.png')}
+              source={require('../assets/icon-star.png')}
               style={{
                 padding: 14,
                 resizeMode: 'contain'
@@ -132,7 +132,7 @@ class BookmarkedAPT extends React.Component {
                 {this.state.curSorting}
               </Text>
               <Image
-                source={require('./assets/icon-open-arrow.png')}
+                source={require('../assets/icon-open-arrow.png')}
                 style={{
                   padding: 4,
                   resizeMode: 'contain',
@@ -150,7 +150,7 @@ class BookmarkedAPT extends React.Component {
           >
             <View style={{ flexDirection: 'row' }}>
               <Image
-                source={require('./assets/icon-settings.png')}
+                source={require('../assets/icon-settings.png')}
                 style={{
                   marginLeft: 4,
                   marginRight: 3,
